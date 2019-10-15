@@ -1,0 +1,59 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Каталог</title>
+    <style>
+        h1 {
+            font-size: 34px; /* Размер шрифта */
+            margin: 0; /* Убираем отступы */
+            color: #FF0000; /* Цвет текста */
+        }
+        h2 {
+            font-size: 20px; /* Размер шрифта */
+            margin: 0; /* Убираем отступы */
+            color:  #000000; /* Цвет текста */
+        }
+
+        #header { /* Верхний блок */
+            background: #000000; /* Цвет фона */
+            padding: 2%; /* Поля вокруг текста */
+        }
+        #sidebar { /* Левая колонка */
+            float: left; /* Обтекание справа */
+            border: 1px solid #333; /* Параметры рамки вокруг */
+            width: 10%; /* Ширина колонки */
+            padding: 5px; /* Поля вокруг текста */
+            margin: 10px 10px 20px 5px; /* Значения отступов */
+        }
+        #product
+        {
+            margin: 10px 5px 10px 13%; /* Значения отступов */
+            padding: 5px; /* Поля вокруг текста */
+            border: 1px solid #333; /* Параметры рамки */
+        }
+    </style>
+</head>
+<body>
+<script language="JavaScript" type="text/javascript" src="../script/AddProduct.js "></script>
+<div id="header"><h1>Каталог</h1></div>
+<div id="sidebar">
+    <p>    <input type="button" value="" name="showProduct" OnClick=" ">        </p>
+    <p>    <input type="button" value="" name="showProduct" OnClick="">         </p>
+    <p>    <input type="button" value="" name="showProduct" OnClick="">         </p>
+</div>
+
+<div id="product">
+<h2>Товары</h2>
+
+
+<table>
+
+
+<?php echo $tab; ?>
+
+</table>
+
+</div>
+
+</body>
+</html>
