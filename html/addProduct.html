@@ -10,43 +10,22 @@
 <input type="file" onchange="previewFile()"><br>
 <img name="img" id="img" src="" height="50" alt="Image preview...">
 
-    <?php
-require_once 'bd.php';
-$link = mysqli_connect($host, $user, $password, $database)
-or die("Ошибка " . mysqli_error($link));
+<?
+if ($_POST["submit"]) {
+$db=mysql_connect("localhost", "root" );
+mysql_select_db("student",$db);
+mysql_query("SET NAMES cp1251");
+$a=$_POST['name'];
+$b=$_POST['text'];
+$c=$_POST['price'];
 
-
-    $name = htmlentities(mysqli_real_escape_string($link, $_POST['name']));
-    $price = htmlentities(mysqli_real_escape_string($link, $_POST['price']));
-
-     $query ="INSERT INTO tovars VALUES(NULL, '$name','$company')";
-
-       $result = mysqli_query($link, $query) or die("Ошибка " . mysqli_error($link));
-    if($result)
-    {
-        echo "<span style='color:blue;'>Данные добавлены</span>";
-    }
-
-$query ="SELECT * FROM tovars";
-
-$result = mysqli_query($link, $query) or die("Ошибка " . mysqli_error($link));
-if($result)
-{
-$rows = mysqli_num_rows($result); // количество полученных строк
-
-echo "<table><tr><th>Id</th><th>Модель</th><th>Производитель</th></tr>";
-    for ($i = 0 ; $i < $rows ; ++$i)
-    {
-    $row = mysqli_fetch_row($result);
-    echo "<tr>";
-        for ($j = 0 ; $j < 3 ; ++$j) echo "<td>$row[$j]</td>";
-        echo "</tr>";
-    }
-    echo "</table>";
-mysqli_close($link);
+$sql="INSERT INTO employees (name,text,price) VALUES ('$a','$b','$c')";
+$result=mysql_query($sql);
+echo "Спасибо! Информация занесена!\n";
+} else {echo "not conect!!";}
 ?>
 
-<form  action='../bd.php' method='post'>
+<form  action='../addProduct.html' method='post'>
 
     Name: <input type='text' id="name"> <br />
     text: <input type='text' id="text"> <br />
