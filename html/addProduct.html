@@ -4,20 +4,49 @@
     <title>Добавление товара</title>
 </head>
 <body>
-
-
 <script language="JavaScript" type="text/javascript" src="../script/AddProduct.js">
-
 </script>
-
 
 <input type="file" onchange="previewFile()"><br>
 <img name="img" id="img" src="" height="50" alt="Image preview...">
 
+    <?php
+require_once 'bd.php';
+$link = mysqli_connect($host, $user, $password, $database)
+or die("Ошибка " . mysqli_error($link));
 
 
+    $name = htmlentities(mysqli_real_escape_string($link, $_POST['name']));
+    $price = htmlentities(mysqli_real_escape_string($link, $_POST['price']));
 
-<form>
+     $query ="INSERT INTO tovars VALUES(NULL, '$name','$company')";
+
+       $result = mysqli_query($link, $query) or die("Ошибка " . mysqli_error($link));
+    if($result)
+    {
+        echo "<span style='color:blue;'>Данные добавлены</span>";
+    }
+
+$query ="SELECT * FROM tovars";
+
+$result = mysqli_query($link, $query) or die("Ошибка " . mysqli_error($link));
+if($result)
+{
+$rows = mysqli_num_rows($result); // количество полученных строк
+
+echo "<table><tr><th>Id</th><th>Модель</th><th>Производитель</th></tr>";
+    for ($i = 0 ; $i < $rows ; ++$i)
+    {
+    $row = mysqli_fetch_row($result);
+    echo "<tr>";
+        for ($j = 0 ; $j < 3 ; ++$j) echo "<td>$row[$j]</td>";
+        echo "</tr>";
+    }
+    echo "</table>";
+mysqli_close($link);
+?>
+
+<form  action='../bd.php' method='post'>
 
     Name: <input type='text' id="name"> <br />
     text: <input type='text' id="text"> <br />
@@ -28,7 +57,6 @@
 <input type="button" value="add product" name="addProduct" OnClick="addProduct() ;">
 
 <input type="button" value="delete product" name="showProduct" OnClick="del() ;">
-
 
 
 </body>
