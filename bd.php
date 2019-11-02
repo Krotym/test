@@ -4,9 +4,9 @@
 session_start();
 
 $host = 'localhost'; // адрес сервера
-$database = 'compstore'; // имя базы данных
+$database = 'site'; // имя базы данных
 $user = 'root'; // имя пользователя
-$password = '1234567'; // пароль
+$password = ; // пароль
 
 
 $name=  $_POST['name'];
