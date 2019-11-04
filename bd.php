@@ -3,7 +3,7 @@
 <?
 echo"blv";
 
-if(isset($_POST['text']) && isset($_POST['name']) && isset($_POST['price'])){
+
 
 
 
@@ -66,5 +66,5 @@ if($result)
 }
 mysql_close($db);
 
-}
+
 ?>
