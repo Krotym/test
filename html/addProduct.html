@@ -11,21 +11,10 @@
 <img name="img" id="img" src="" height="50" alt="Image preview...">
 
 <?
-if ($_POST["submit"]) {
-$db=mysql_connect("localhost", "root" );
-mysql_select_db("student",$db);
-mysql_query("SET NAMES cp1251");
-$a=$_POST['name'];
-$b=$_POST['text'];
-$c=$_POST['price'];
 
-$sql="INSERT INTO employees (name,text,price) VALUES ('$a','$b','$c')";
-$result=mysql_query($sql);
-echo "Спасибо! Информация занесена!\n";
-} else {echo "not conect!!";}
 ?>
 
-<form  action='../addProduct.html' method='post'>
+<form  action='../bd.php' method='post'>
 
     Name: <input type='text' id="name"> <br />
     text: <input type='text' id="text"> <br />
