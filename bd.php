@@ -3,7 +3,7 @@
 <?
 echo "blu";
  $name = $_POST['name'];
- 
+ echo $_REQUEST['name'];
  echo  $name; 
  
  
