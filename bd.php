@@ -2,8 +2,8 @@
 <body>
 <?
 echo "blu";
- $name = $_POST['name'];
- echo $_REQUEST['name'];
+ $name = $_GET['name'];
+ 
  echo  $name; 
  
  
