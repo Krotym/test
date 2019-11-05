@@ -2,7 +2,7 @@
 <body>
 <?
 echo "blu";
- $name = $_GET['name'];
+ $name = $_POST['name'];
   
  echo  $name; 
  
