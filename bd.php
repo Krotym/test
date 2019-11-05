@@ -1,8 +1,9 @@
 <html>
 <body>
 <?
-
+echo "blu";
  $name = $_POST['name'];
+ 
  echo  $name; 
  
  
