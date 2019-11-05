@@ -1,5 +1,3 @@
-<html>
-<body>
 <?
 echo "blu";
   echo $_POST['name'];
