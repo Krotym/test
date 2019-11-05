@@ -30,7 +30,7 @@ $input ="INSERT INTO tovars (name,price,text) VALUES('$name','$price','$text')";
 
 $output ="SELECT * FROM tovars";
 
-$result = mysqli_query($link, $output) or die(" ^  ^          " . mysqli_error($link));
+$result = mysqli_query($link, $output) or die("err " . mysqli_error($link));
 //вывод
 if($result)
 {
