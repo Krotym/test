@@ -3,7 +3,7 @@
 <?
 echo "blu";
  $name = $_GET['name'];
- 
+  
  echo  $name; 
  
  
