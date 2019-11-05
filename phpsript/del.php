@@ -1,6 +1,4 @@
 <?
-echo"blv";
-
 
 $host = 'localhost';
   $user = 'misha';
