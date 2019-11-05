@@ -47,7 +47,7 @@ if($result)
     echo "</table>";
 
 }
-mysql_close($db);
+mysql_close($link);
 
 
 ?>
