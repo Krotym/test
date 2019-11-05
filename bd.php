@@ -2,7 +2,7 @@
 <body>
 <?
 echo"blv";
- $name = $_POST['name']
+ $name = $_POST['name'];
   
 $host = 'localhost';
   $user = 'misha';
