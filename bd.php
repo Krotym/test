@@ -2,10 +2,8 @@
 <body>
 <?
 echo "blu";
- $name = $_POST['name'];
+  echo $_POST['name'];
   
- echo  $name; 
- 
  
 $host = 'localhost';
   $user = 'misha';
@@ -19,7 +17,7 @@ $host = 'localhost';
     exit;
 }
   
-//$name = htmlentities(mysqli_real_escape_string($link, $_POST['name']));
+$name = htmlentities(mysqli_real_escape_string($link, $_POST['name']));
 $price = htmlentities(mysqli_real_escape_string($link, $_POST['price']));
 $text = htmlentities(mysqli_real_escape_string($link, $_POST['text']));
 
