@@ -1,6 +1,4 @@
 <?
-echo "blu";
-  echo $_POST['name'];
   
  
 $host = 'localhost';
