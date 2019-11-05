@@ -38,13 +38,13 @@ if($result)
     $rows = mysqli_num_rows($result);
 
     echo "<table><tr><th>Id</th><th> name </th><th> price </th><th> text </th></tr>";
-    for ($i = 0 ; $i < $rows ; ++$i)
-    {
-        $row = mysqli_fetch_row($result);
-        echo "<tr>";
-            for ($j = 0 ; $j < 4 ; ++$j) echo "<td>$row[$j]</td>";
-        echo "</tr>";
-    }
+  while($data = mysql_fetch_array($output)){ 
+    echo '<tr>';
+    echo '<td>' . $data['name'] . '</td>';
+    echo '<td>' . $data['price'] . '</td>';
+    echo '<td>' . $data['text'] . '</td>';
+    echo '</tr>';
+  }
     echo "</table>";
 
 }
