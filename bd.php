@@ -2,20 +2,21 @@
 <body>
 <?
 echo"blv";
+ $name = $_POST['name']
+  
 $host = 'localhost';
   $user = 'misha';
   $pass = '1410261';
   $db_name = 'student';
+  
+  
   $link = mysqli_connect($host, $user, $pass, $db_name);
- 
-  
-  
-  if (!$link) {
+      if (!$link) {
     echo 'code err: ' . mysqli_connect_errno() . ', err: ' . mysqli_connect_error();
     exit;
 }
   
-$name = htmlentities(mysqli_real_escape_string($link, $_POST['name']));
+//$name = htmlentities(mysqli_real_escape_string($link, $_POST['name']));
 $price = htmlentities(mysqli_real_escape_string($link, $_POST['price']));
 $text = htmlentities(mysqli_real_escape_string($link, $_POST['text']));
 
