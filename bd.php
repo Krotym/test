@@ -1,9 +1,11 @@
 <html>
 <body>
 <?
-echo"blv";
+
  $name = $_POST['name'];
-  
+ echo  $name; 
+ 
+ 
 $host = 'localhost';
   $user = 'misha';
   $pass = '1410261';
