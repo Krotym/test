@@ -19,7 +19,7 @@ $name = htmlentities(mysqli_real_escape_string($link, $_POST['name']));
 $price = htmlentities(mysqli_real_escape_string($link, $_POST['price']));
 $text = htmlentities(mysqli_real_escape_string($link, $_POST['text']));
 
-$input ="INSERT INTO tovars VALUES(NULL, '$name','$price','$text')";
+$input ="INSERT INTO tovars (name,price,text) VALUES('$name','$price','$text')";
 
    $result = mysqli_query($link,$input) or die("Ошибка " . mysqli_error($link)); 
     if($result)
@@ -36,7 +36,7 @@ if($result)
 {
     $rows = mysqli_num_rows($result);
 
-    echo "<table><tr><th>Id</th><th> ^          ^ </th><th> ^  ^                ^      ^ </th></tr>";
+    echo "<table><tr><th>Id</th><th> name </th><th> price </th><th> text </th></tr>";
     for ($i = 0 ; $i < $rows ; ++$i)
     {
         $row = mysqli_fetch_row($result);
