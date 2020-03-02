@@ -13,6 +13,7 @@ $host = '3.93.9.198';
     exit;
 }
   
+
 $name = htmlentities(mysqli_real_escape_string($link, $_POST['name']));
 $price = htmlentities(mysqli_real_escape_string($link, $_POST['price']));
 $text = htmlentities(mysqli_real_escape_string($link, $_POST['text']));
