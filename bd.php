@@ -1,7 +1,7 @@
 <?
   
  
-$host = 'localhost';
+$host = '3.93.9.198';
   $user = 'mis';
   $pass = '1410261';
   $db_name = 'student';
